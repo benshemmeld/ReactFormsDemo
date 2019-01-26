@@ -1,1 +1,1 @@
-"%ProgramFiles%\iis express\iisexpress.exe" /config:.vs\config\applicationhost.config
+"%ProgramFiles%\iis express\iisexpress.exe" /config:applicationhost.config
