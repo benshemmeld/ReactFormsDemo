@@ -14,10 +14,17 @@ namespace Api
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                "React",
+                "{item1}/{item2}/{item3}",
+                new { controller = "Home", action = "Index" },
+                new { item1 = ".*?", item2=".*?", item3 = ".*?" }
             );
+
+            //routes.MapRoute(
+            //    name: "",
+            //    url: "",
+            //    defaults: new {}
+            //);
         }
     }
 }
