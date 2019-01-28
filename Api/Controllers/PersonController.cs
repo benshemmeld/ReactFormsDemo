@@ -13,6 +13,7 @@ namespace Api.Controllers
         public PersonController(IContext context)
         {
             _context = context;
+            _random = new Random();
         }
 
         public Person Get(int id)

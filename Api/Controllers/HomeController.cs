@@ -10,9 +10,9 @@ namespace Api.Controllers
     {
         public ActionResult Index()
         {
-            var file = Server.MapPath("/") + "../Web/dist/";
+            var file = Server.MapPath("/") + "..\\Web\\dist\\";
             var pathAndQuery = Request.Url.PathAndQuery;
-            if(pathAndQuery.ToLower().StartsWith("js/"))
+            if(pathAndQuery.ToLower().StartsWith("/js/"))
             {
                 file += pathAndQuery;
             }
