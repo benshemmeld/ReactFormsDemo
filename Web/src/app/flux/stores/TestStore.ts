@@ -1,6 +1,6 @@
 import * as Events from 'events';
 import dispatcher from '../Dispatcher';
-import * as Actions from '../actions'
+import * as Actions from '../actions/Index'
 import { IGitHubUser } from '../../interfaces/IGitHubUser';
 
 class TestStore extends Events.EventEmitter {

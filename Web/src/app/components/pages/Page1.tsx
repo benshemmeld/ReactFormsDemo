@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { UserDetails } from '../UserDetails';
 import { IGitHubUser } from '../../interfaces/IGitHubUser';
-import { UpdateUserAction, IncrementCounterAction } from '../../flux/actions'
-import { testStore } from '../../flux/stores';
+import { UpdateUserAction, IncrementCounterAction } from '../../flux/actions/Index'
+import { testStore } from '../../flux/stores/Index';
 
 import axios from 'axios';
 
