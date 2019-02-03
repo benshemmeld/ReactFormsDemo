@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const chalk = require('chalk');
 
 module.exports = {
     mode: 'development',
@@ -38,6 +40,10 @@ module.exports = {
         watchContentBase: true
     },
     plugins: [
+        new ProgressBarPlugin({
+            format: '  build [:bar] ' + chalk.green.bold(':percent') + ' (:elapsed seconds)',
+            clear: false
+        }),
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src', 'app', 'index.html') }),
     ]
 }
