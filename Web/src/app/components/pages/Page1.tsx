@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { UserDetails } from './UserDetails';
-import { IGitHubUser } from '../IGitHubUser';
-import * as Action from '../flux/Action'
-import { testStore } from '../stores';
+import { UserDetails } from '../UserDetails';
+import { IGitHubUser } from '../../interfaces/IGitHubUser';
+import { UpdateUserAction, IncrementCounterAction } from '../../flux/actions/Index'
+import { testStore } from '../../flux/stores/Index';
 
 import axios from 'axios';
 
@@ -39,14 +39,14 @@ export class Page1 extends React.Component<IProps, IState> {
     loadUser(username: string): void {
         axios.get<IGitHubUser>('https://api.github.com/users/' + username)
             .then(response => {
-                const updateUserAction = new Action.UpdateUserAction(response.data);
+                const updateUserAction = new UpdateUserAction(response.data);
                 updateUserAction.Dispatch();
             });
     }
 
     incrementCounter(): void {
 
-        var action = new Action.IncrementCounterAction(this.state.incrementAmount);
+        var action = new IncrementCounterAction(this.state.incrementAmount);
         action.Dispatch();
     }
 

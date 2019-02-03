@@ -1,7 +1,7 @@
 import * as Events from 'events';
-import dispatcher from '../flux/Dispatcher';
-import Action, { IncrementCounterAction, UpdateUserAction } from '../flux/Action'
-import { IGitHubUser } from '../IGitHubUser';
+import dispatcher from '../Dispatcher';
+import * as Actions from '../actions/Index'
+import { IGitHubUser } from '../../interfaces/IGitHubUser';
 
 class TestStore extends Events.EventEmitter {
 
@@ -21,12 +21,12 @@ class TestStore extends Events.EventEmitter {
         return this._user;
     }
 
-    handleAction(action: Action) {
-        if (action instanceof IncrementCounterAction) {
+    handleAction(action: Actions.Action) {
+        if (action instanceof Actions.IncrementCounterAction) {
             this.incrementCounter(action.Amount());
         }
 
-        if (action instanceof UpdateUserAction) {
+        if (action instanceof Actions.UpdateUserAction) {
             this._user = action.User();
             this.emit("change");
         }
