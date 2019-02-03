@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IGitHubUser } from '../IGitHubUser'
+import { IGitHubUser } from '../interfaces/IGitHubUser'
 
 interface IProps {
     user: IGitHubUser;

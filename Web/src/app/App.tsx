@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Router, Route } from 'react-router'
+import { Router, Route, Switch } from 'react-router'
 import { Link } from 'react-router-dom'
 import * as H from 'history'
-import * as Pages from './components'
+import * as Pages from './components/pages'
 
 export class App extends React.Component<{}, {}> {
 
@@ -30,9 +30,13 @@ export class App extends React.Component<{}, {}> {
                         </div>
                     </div>
                     <div className="container body-content">
-                        <Route exact path="/" component={Pages.Page1} />
-                        <Route path="/Page1" component={Pages.Page1} />
-                        <Route path="/Page2" component={Pages.Page2} />
+                        <Switch>
+                            <Route exact path="/" component={Pages.Page1} />
+                            <Route path="/Page1" component={Pages.Page1} />
+                            <Route path="/Page2" component={Pages.Page2} />
+                            <Route path="/Page3" component={Pages.Page3} />
+                            <Route path="*" component={Pages.NotFound} />
+                        </Switch>
                     </div>
                 </>
             </Router>

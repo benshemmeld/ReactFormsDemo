@@ -1,3 +1,3 @@
-export { Page1 } from './Page1'
-export { Page2 } from './Page2'
+export { Page1 } from './pages/Page1'
+export { Page2 } from './pages/Page2'
 

@@ -1,5 +1,5 @@
 import * as Flux from 'flux'
-import Action from './Action'
+import { Action } from './actions/Action'
 
 class Dispatcher extends Flux.Dispatcher<Action> {
 
