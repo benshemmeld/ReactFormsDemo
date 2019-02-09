@@ -261,4 +261,9 @@ __pycache__/
 *.pyc
 
 Api/js/app.bundle.js
+Api/js/app.bundle.js.map
 Api/js/vendor.bundle.js
+Api/js/vendor.bundle.js.map
+Api/index.html
+Api/fonts/*
+
