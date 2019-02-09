@@ -6,11 +6,10 @@ const chalk = require('chalk');
 module.exports = {
     mode: 'development',
     entry: {
-        app: ['./src/app/index.tsx'],
-        vendor: ['react', 'react-dom']
+        app: ['./src/app/index.tsx']
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../Api'),
         filename: 'js/[name].bundle.js',
         publicPath: '/'
     },
@@ -30,10 +29,20 @@ module.exports = {
             },
             {
                 test: /\.(ttf|woff|woff2|eot|svg)$/,
-                loader: 'file-loader'
+                loader: 'file-loader?name=/fonts/[hash].[ext]'
             },
             { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
         ]
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendor"
+                }
+            }
+        }
     },
     devServer: {
         historyApiFallback: true,
